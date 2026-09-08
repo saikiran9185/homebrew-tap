@@ -7,7 +7,7 @@ cask "sieve" do
   desc "Provenance-first research workspace: search 14 databases, code PDFs, generate PRISMA"
   homepage "https://github.com/saikiran9185/sieve"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Sieve.app"
 
