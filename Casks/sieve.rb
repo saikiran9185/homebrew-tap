@@ -1,6 +1,6 @@
 cask "sieve" do
-  version "1.4.1"
-  sha256 "af895be676d834208e6038f62a663ad86aa0d7dca277469200ea3675533ad8dc"
+  version "1.4.2"
+  sha256 "1e0649ea9a123110bbd51dea69f27ec5f49310bbabf15190d32ece7cb53534dd"
 
   url "https://github.com/saikiran9185/sieve/releases/download/v#{version}/Sieve-#{version}.dmg"
   name "Sieve"
