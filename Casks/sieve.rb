@@ -1,6 +1,6 @@
 cask "sieve" do
   version "1.4"
-  sha256 "2631ad1eedb465fbb14f330b6256fb3501c61dad907fb1f843e1054f6b6fa9a0"
+  sha256 "f4c3f5f1664d743c7a7eb50cbfba2b2d68e496ba0d57a30ef238b37eab444d5d"
 
   url "https://github.com/saikiran9185/sieve/releases/download/v#{version}/Sieve-#{version}.dmg"
   name "Sieve"
@@ -28,7 +28,7 @@ cask "sieve" do
     "~/Library/Saved Application State/com.saikiran.Sieve.savedState",
   ]
   caveats <<~CAVEATS
-    Your library lives in ~/Documents/Sieve. It is not removed by ,
-    so your reviews survive reinstalling. Delete that folder yourself if you want it gone.
+    Your library lives in ~/Documents/Sieve. Uninstalling does not remove it, so your
+    reviews survive reinstalling. Delete that folder yourself if you want it gone.
   CAVEATS
 end
