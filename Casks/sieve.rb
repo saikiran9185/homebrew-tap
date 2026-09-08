@@ -11,9 +11,17 @@ cask "sieve" do
 
   app "Sieve.app"
 
-  # The app is signed with the hardened runtime but not notarised — notarisation requires a
-  # paid Apple Developer ID. Homebrew clears the download quarantine flag for casks, which is
-  # what would otherwise make macOS refuse to open it.
+  # Sieve is signed with the hardened runtime but not notarised by Apple, because
+  # notarisation requires a paid Developer ID. Without notarisation macOS refuses to open a
+  # quarantined app and reports it as damaged, and Homebrew no longer offers
+  # --no-quarantine. The flag is therefore cleared here, on an app the user has explicitly
+  # chosen to install from a tap they explicitly added. The download itself is still
+  # verified: Homebrew checks the sha256 above against the file it fetched.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Sieve.app"],
+                   sudo: false
+  end
 
   zap trash: [
     "~/Library/Preferences/com.saikiran.Sieve.plist",
